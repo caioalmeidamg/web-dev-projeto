@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %}
+    Portal Biblioteca - Dashboard
+{% endblock %}
+
+{% block conteudo %}
+    <!-- Início do bloco de código adicionado -->
+    <center>
+    <br>
+    <div class="card" style="width:240px">
+        <img class="card-img-top" src="{% static 'img_avatar.png' %}" alt="Imagem do card">
+        <div class="card-body">
+          <h4 class="card-title"> {{ usuario }} </h4>
+          <p class="card-text">Email: {{ email }} </p>
+        </div>
+    </div>
+    </center>
+    <!-- Fim do bloco de código adicionado -->
+
+    <div class="mycard">
+        <h1>Dashboard</h1>
+        <div>
+            <canvas id="graficoNumVolumes"></canvas>
+        </div>
+        <br>
+        <br>
+        <div>
+            <canvas id="graficoPizza"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'myscripts.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Portal Biblioteca - Cadastro
+{% endblock %}
+
+{% block conteudo %}
+    <form action="{% url 'cadastro' %}" method="POST">
+    {% csrf_token %}
+    <div class="input-group">
+        <span class="input-group-text">Usuário: </span>
+        <input type="text" class="form-control" placeholder="Usuário ..." name="usuario">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">E-mail: </span>
+        <input type="email" class="form-control" placeholder="E-mail ..." name="email">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Senha: </span>
+        <input type="password" class="form-control" placeholder="Senha ..." name="senha">
+    </div>
+    <br>
+    <input type="submit" value="Cadastrar" class="btn btn-primary">        
+</form>
+{% endblock %}
